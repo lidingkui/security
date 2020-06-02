@@ -1,12 +1,11 @@
 package com.security.security.多线程;
 
-import lombok.Data;
+import java.util.function.ObjIntConsumer;
 
-@Data
 public class Hero {
-    String name;
-    float hp;
-    int deamge;
+    public String name;
+    public float hp;
+    public int deamge;
 
     public void attackHero(Hero h) {
 //        try {
@@ -15,9 +14,9 @@ public class Hero {
 //            e.printStackTrace();
 //        }
         h.hp -= deamge;
-        System.out.format("%s 正在攻击 %s, %s的血变成了 %.0f%n",name,h.name,h.name,h.hp);
+        System.out.format("%s 正在攻击 %s, %s的血变成了 %.0f%n", name, h.name, h.name, h.hp);
         if (h.isDead()) {
-            System.out.println(h.name+"已经死了");
+            System.out.println(h.name + "死了");
         }
     }
 

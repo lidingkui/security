@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: mybati-plus
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: lidingkui
+    url: jdbc:mysql://127.0.0.1:3306/mp?serverTimezone=GMT%2B8&amp&useSSL=false
+  jpa:
+    show-sql: true  #该配置是为了方便在控制台打印出sql语句   方便调试
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+server:
+  port: 6688
+
+mybatis:
+  type-aliases-package: com.charles.mybatisplus.entity
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+   root: warn
+   com.charles.mybatisplus.dao: trace
+  pattern:
+    console: '%p%m%n'
+
+
+#  此配置表示开启mybatis 逻辑删除功能
+mybatis-plus:
+  global-config:
+    db-config:
+       #以下表示逻辑未删除标识为 0
+      logic-not-delete-value: 0
+      #以下表示逻辑删除字段标识为：1
+      logic-delete-value: 1
+
+
+# hystrix 的超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+
+
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+
