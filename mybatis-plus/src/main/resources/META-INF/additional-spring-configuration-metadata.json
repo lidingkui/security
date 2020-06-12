@@ -4,5 +4,6 @@
       "name": "ribbon.ReadTimeout",
       "type": "java.lang.String",
       "description": "Description for ribbon.ReadTimeout."
-  }
-] }
+    }
+  ]
+}

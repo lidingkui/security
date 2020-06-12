@@ -4,3 +4,12 @@ server:
 spring:
   application:
     name: security
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # 注明服务的地址
+    register-with-eureka: false  #此注解表明eureka不向自己注册
+  server:
+    enable-self-preservation: false #此注解表示关掉eureka的自我保护功能    true为开启（生产环境必须开启）
+

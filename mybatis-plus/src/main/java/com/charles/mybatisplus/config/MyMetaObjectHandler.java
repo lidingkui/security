@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 /*
-* 填充配置信息类
-* 加上该配置后就可以实现一些必要的字段的自动填充功能
-*/
+ * 填充配置信息类
+ * 加上该配置后就可以实现一些必要的字段的自动填充功能
+ */
 @Component
 public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override

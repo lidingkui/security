@@ -76,7 +76,6 @@ class MybatisPlusApplicationTests {
     }
 
 
-
     void insert() {
         User user = new User();
         user.setName("霍建华");

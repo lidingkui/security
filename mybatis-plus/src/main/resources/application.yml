@@ -25,8 +25,8 @@ mybatis:
 
 logging:
   level:
-   root: warn
-   com.charles.mybatisplus.dao: trace
+    root: warn
+    com.charles.mybatisplus.dao: trace
   pattern:
     console: '%p%m%n'
 
@@ -35,7 +35,7 @@ logging:
 mybatis-plus:
   global-config:
     db-config:
-       #以下表示逻辑未删除标识为 0
+      #以下表示逻辑未删除标识为 0
       logic-not-delete-value: 0
       #以下表示逻辑删除字段标识为：1
       logic-delete-value: 1

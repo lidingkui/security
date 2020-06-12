@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: concurrency
+
+server:
+  port: 9900
+
+

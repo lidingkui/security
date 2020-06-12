@@ -8,7 +8,7 @@
         <version>2.3.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.bingfa</groupId>
+    <groupId>com.bingfaceshi</groupId>
     <artifactId>concurrency</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>concurrency</name>
@@ -23,6 +23,19 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!--必须要加上此依赖，否则启动后项目会报 Completed shut down of DiscoveryClient 导致注册不成功-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
