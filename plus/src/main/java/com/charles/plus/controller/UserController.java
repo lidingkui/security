@@ -19,8 +19,6 @@ public class UserController {
 
     @Resource
     private UserService userService;
-    @Resource
-    private UserMapper userMapper;
 
     @GetMapping("/find-all-user")
     public PageInfo<User> findAll(@RequestParam(value = "pageNum", required = false)int pageNum,
@@ -29,22 +27,5 @@ public class UserController {
         List<User> users = userService.findll(pageNum, pageSize);
         PageInfo<User> pageInfo = new PageInfo<>(users);
         return pageInfo;
-    }
-
-
-    @RequestMapping("/addCategory")
-    public String listCategory(User c) throws Exception {
-        userMapper.save(c);
-        return "redirect:listCategory";
-    }
-//    @RequestMapping("/deleteCategory")
-//    public String deleteCategory(User c) throws Exception {
-//        userMapper.delete(c.getId());
-//        return "redirect:listCategory";
-//    }
-    @RequestMapping("/updateCategory")
-    public String updateCategory(User c) throws Exception {
-        userMapper.update(c);
-        return "redirect:listCategory";
     }
 }

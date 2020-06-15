@@ -12,10 +12,6 @@ public class UserService {
     @Resource
     private UserMapper userMapper;
 
-    public List<User> findAll() {
-        return userMapper.findAll();
-    }
-
     public List<User> findll(int pageNum, int pageSize) {
         return userMapper.findll();
     }
