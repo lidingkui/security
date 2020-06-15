@@ -17,9 +17,12 @@ eureka:
 server:
   port: 6688
 
+#mybatis的相关配置
 mybatis:
-  type-aliases-package: com.mybatis.mybatisplus.entity
-  mapper-locations: classpath:/mapper/*Mapper.xml
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.charles.plus.entity
+  #开启驼峰命名
   configuration:
     map-underscore-to-camel-case: true
 
@@ -32,27 +35,11 @@ mybatis:
 
 
 #  此配置表示开启mybatis 逻辑删除功能
-mybatis-plus:
-  global-config:
-    db-config:
-      #以下表示逻辑未删除标识为 0
-      logic-not-delete-value: 0
-      #以下表示逻辑删除字段标识为：1
-      logic-delete-value: 1
-
-
-# hystrix 的超时时间
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 30000
-
-
-#ribbon的超时时间
-ribbon:
-  ReadTimeout: 30000
-  ConnectTimeout: 30000
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      #以下表示逻辑未删除标识为 0
+#      logic-not-delete-value: 0
+#      #以下表示逻辑删除字段标识为：1
+#      logic-delete-value: 1
 
