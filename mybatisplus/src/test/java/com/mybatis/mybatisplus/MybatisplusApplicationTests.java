@@ -1,19 +1,19 @@
-package com.charles.mybatisplus;
+package com.mybatis.mybatisplus;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.charles.mybatisplus.dao.UserMapper;
-import com.charles.mybatisplus.entity.User;
+import com.mybatis.mybatisplus.entity.User;
+import com.mybatis.mybatisplus.mapper.UserMapper;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.util.*;
-
-import static java.time.LocalDateTime.now;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -87,13 +87,13 @@ class MybatisPlusApplicationTests {
     }
 
 
+    @Test
     void selectAll() {
         List<User> users = userMapper.selectList(null);
         users.forEach(System.out::println);
     }
 
 
-    @Test
     void updatebyId() {
         User user = new User();
         user.setId(1267097046255521793L);

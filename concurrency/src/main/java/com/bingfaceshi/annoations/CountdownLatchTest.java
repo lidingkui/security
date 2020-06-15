@@ -25,16 +25,13 @@ public class CountdownLatchTest {
         },"线程1").start();
 
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println(Thread.currentThread().getName()+"   我即将进入等待状态.....");
-                    countDownLatch.await();
-                    System.out.println(Thread.currentThread().getName()+"  我已经解除等待状态，开始运行....");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() -> {
+            try {
+                System.out.println(Thread.currentThread().getName()+"   我即将进入等待状态.....");
+                countDownLatch.await();
+                System.out.println(Thread.currentThread().getName()+"  我已经解除等待状态，开始运行....");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }, "线程2").start();
 
@@ -46,13 +43,10 @@ public class CountdownLatchTest {
         }
 
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println(Thread.currentThread().getName()+" 等待的线程即将全部被唤醒.......");
-                for (int i = 0; i < 2; i++) {
-                    countDownLatch.countDown();
-                }
+        new Thread(() -> {
+            System.out.println(Thread.currentThread().getName()+" 等待的线程即将全部被唤醒.......");
+            for (int i = 0; i < 2; i++) {
+                countDownLatch.countDown();
             }
         },"唤醒线程后").start();
     }
